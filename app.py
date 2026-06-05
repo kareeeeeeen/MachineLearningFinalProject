@@ -516,8 +516,8 @@ if st.session_state.history:
         if item.get("dual_sim") == 1: active_features.append("🎴 Dual SIM")
         if item.get("four_g") == 1: active_features.append("📶 4G LTE")
         if item.get("three_g") == 1: active_features.append("🌐 3G")
-        if item.get("touch_screen") == 1: active_features.append("📱 Touchscreen")
-        if item.get("wifi") == 1: active_features.append("✨ Wi-Fi")
+        if item.get("touch_screen") == 1: active_features.append("🤳 Touchscreen")
+        if item.get("wifi") == 1: active_features.append("🛜 Wi-Fi")
         
         features_txt = " &nbsp;•&nbsp; ".join(active_features) if active_features else "None"
         badge_style = "display:inline-block; margin:4px; padding:5px 10px; font-size:0.75rem; color:#cbd5e1; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:6px; text-align:center; white-space:nowrap;"
@@ -537,7 +537,7 @@ if st.session_state.history:
                 <div style="{badge_style}">⚖️ Weight: <b style="color:#fff;">{item.get("Weight")} g</b></div>
                 <div style="{badge_style}">📏 Thick: <b style="color:#fff;">{item.get("Thick")} cm</b></div>
                 <div style="{badge_style}">📸 Rear: <b style="color:#fff;">{item.get("PCam")} MP</b></div>
-                <div style="{badge_style}">🤳 Front: <b style="color:#fff;">{item.get("FCam")} MP</b></div>
+                <div style="{badge_style}">📲 Front: <b style="color:#fff;">{item.get("FCam")} MP</b></div>
                 <div style="{badge_style}">🖥️ Res: <b style="color:#fff;">{item.get("Width")}x{item.get("Height")}</b></div>
                 <div style="{badge_style}">📐 Size: <b style="color:#fff;">{item.get("ScH")}x{item.get("ScW")} cm</b></div>
                 <div style="{badge_style}">📞 Talk: <b style="color:#fff;">{item.get("Talk")} hrs</b></div>
