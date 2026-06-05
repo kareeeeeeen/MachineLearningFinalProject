@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+html, body, [class*="css"]{
+    font-family:'Inter', sans-serif;
+}
+
+/* fix background color (ga tergantung light/dark mode) */
+[data-testid="stAppViewContainer"] {
+    background-color: #0a0f1e !important;
+}
+
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+[data-testid="stHeader"] {
+    display: none !important;
+    height: 0 !important;
+}
+
+[data-testid="stCaptionContainer"] p {
+    color: #94a3b8 !important;
+    font-size: 0.78rem !important;
+}
+
+.main {
+    background-color: #0a0f1e !important;
+}
+
+/* the whole page */
+.block-container{
+    max-width:1200px;
+    padding-top:1.5rem;
+    padding-bottom:3rem;
+}
+
+/* header */
+.header {
+    background: linear-gradient(135deg,#032770,#36329e)!important;
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3b82f6; 
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.6); 
+}
+.header-tag{
+    font-family:'Poppins', sans-serif;
+    letter-spacing:.18em;
+    font-size:.75rem;
+    opacity:.75;
+}
+
+.header h1{
+    font-family:'Poppins', sans-serif;
+    font-size:3.2rem;
+    font-weight:800;
+    margin:.6rem 0;
+}
+
+.header p{
+    font-family:'Poppins', sans-serif;
+    max-width:1000ox;
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+/* section */
+.section-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: .8rem;
+    letter-spacing: .18em;
+    color: #ffffff;
+    margin: 2rem 0 1rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2); 
+    padding-bottom: 0.5rem;
+}
+
+/* input */
+div[data-testid="stNumberInput"]{
+    background: transparent;
+}
+
+div[data-testid="stNumberInput"] input{
+    background:#111827 !important;
+    color:white !important;
+    border:1px solid #374151 !important;
+    border-radius:12px !important;
+}
+
+div[data-testid="stNumberInput"] button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+div[data-testid="stNumberInput"] button:hover {
+    background-color: #e2e8f0 !important;
+}
+
+div[data-testid="stNumberInput"] button svg {
+    fill: #000000 !important;
+    stroke: #000000 !important;
+}
+
+/* button predict */
+div[data-testid="stButton"] > button {
+    background: linear-gradient(135deg,#2563eb,#4f46e5)!important;
+    color: white!important;
+    border: none!important;
+    border-radius: 14px!important;
+    padding: 0.9rem 2rem!important;
+    width: 100%!important;
+    margin-top: 1.5rem!important;
+    font-size: 1rem!important;
+    font-weight: 700!important;
+    height: auto!important;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+div[data-testid="stButton"] button:hover{
+    transform:translateY(-2px);
+}
+
+/* results */
+.result-card {
+    border-radius: 18px;
+    padding: 2rem 2.2rem;
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.result-badge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0.3rem 0 0.6rem;
+    line-height: 1.1;
+}
+.result-sub {
+    font-size: 0.92rem;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+}
+
+/* bar */
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+}
+.bar-bg {
+    flex: 1;
+    height: 8px;
+    border-radius: 99px;
+    background: rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    border-radius: 99px;
+}
+.bar-pct {
+    color: #ffffff;
+    min-width: 38px;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+}
+ 
+/* the median notes */
+.median-note {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 0.4rem;
+    font-style: italic;
+}
+
+/* adjusting some text colors */
+div[data-testid="stNumberInput"] label,
+label[data-testid="stWidgetLabel"] {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+
+div[data-testid="stRadio"] p {
+    color: #ffffff !important;
+}
+
+/* history */
+.history-card {
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.03);
+    box-sizing: border-box;
+}
+
+.hist-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.4rem;
+}
+
+.hist-time {
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+.hist-tier {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+
+.hist-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); 
+    gap: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.hist-badge {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.hist-badge b {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.hist-active-row {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.active-lbl {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.03em;
+}
+
+.active-val {
+    font-size: 0.75rem;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+div[style*="border-left"][style*="box-shadow"] {
+    transition: transform 0.2s ease-in-out !important;
+}
+
+div[style*="border-left"][style*="box-shadow"]:hover {
+    transform: translateX(6px) !important;
+}
