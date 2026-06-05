@@ -315,7 +315,7 @@ with c16:
     touch_screen = yesno("🤳 Touch screen", "touch_screen")
 
 # predicting ui n logic
-if st.button("→  Predict price range"):
+if st.button("→  Predict price range", use_container_width=True):
     raw = {
         "battery_power": battery_power,
         "blue":          blue,
