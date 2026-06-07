@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+/* ── BASE TYPOGRAPHY (Paksa Poppins ke seluruh elemen tanpa ampun) ── */
 * {
     font-family: 'Poppins', sans-serif !important;
 }
 
-html, body, [class*="css"] {
-    font-family: 'Poppins', sans-serif;
+/* ── ANTI-"ARR" & ICON SHIELD (Penyelamat Icon Dropdown) ── */
+/* Kembalikan font bawaan system khusus untuk komponen icon dan SVG agar tidak pecah jadi teks hantu */
+svg, 
+svg *, 
+[data-testid="stIcon"], 
+[data-testid="stIcon"] *,
+.stIcon,
+.stIcon *,
+[data-testid="stExpander"] summary > div:last-child,
+[data-testid="stExpander"] summary > div:last-child * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 [data-testid="stAppViewContainer"] {
@@ -43,20 +51,17 @@ html, body, [class*="css"] {
     margin-bottom: 0.5rem;
 }
 .header-tag {
-    font-family: 'Poppins', sans-serif;
     letter-spacing: .18em;
     font-size: .7rem;
     opacity: .8;
     margin-bottom: 0.5rem;
 }
 .header h1 {
-    font-family: 'Poppins', sans-serif;
     font-size: 2.4rem;
     font-weight: 700;
     margin: 0.3rem 0 0.6rem;
 }
 .header p {
-    font-family: 'Poppins', sans-serif;
     color: #c7e3ff;
     line-height: 1.7;
     font-size: 0.95rem;
@@ -65,7 +70,6 @@ html, body, [class*="css"] {
 
 /* section label */
 .section-label {
-    font-family: 'Poppins', sans-serif;
     font-size: .75rem;
     font-weight: 600;
     letter-spacing: .16em;
@@ -85,7 +89,6 @@ html, body, [class*="css"] {
     margin-bottom: 0.5rem;
 }
 .sc-label {
-    font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     color: #1a3d5c;
@@ -95,11 +98,9 @@ html, body, [class*="css"] {
     font-size: 0.73rem;
     color: #5b82a6;
     margin-bottom: 0.5rem;
-    font-family: 'Poppins', sans-serif;
 }
 .sc-specs-block {
     font-size: 0.72rem;
-    font-family: 'Poppins', sans-serif;
     background: #f5faff;
     border: 1px solid #daeeff;
     border-radius: 8px;
@@ -129,7 +130,6 @@ html, body, [class*="css"] {
     margin-top: 0.1rem;
 }
 .sc-pill {
-    font-family: 'Poppins', sans-serif;
     font-size: 0.68rem;
     font-weight: 500;
     color: #1a6db5;
@@ -163,11 +163,6 @@ html body [data-testid="stExpander"] summary {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-}
-
-html body [data-testid="stExpander"] summary span[data-testid="stWidgetLabel"] div,
-html body [data-testid="stExpander"] summary [aria-hidden="true"] + span {
-    display: none !important;
 }
 
 html body [data-testid="stExpander"] summary svg {
@@ -207,7 +202,6 @@ div[data-testid="stRadio"] div[role="radiogroup"] label p {
 div[data-testid="stNumberInput"] input {
     font-size: 0.82rem !important;
     font-weight: 500 !important;
-    color: #1a3d5c !important;
 }
 
 [data-testid="stCaptionContainer"] p {
@@ -257,7 +251,6 @@ div[data-testid="stButton"] > button {
     margin-top: 0.8rem !important;
     font-size: 1rem !important;
     font-weight: 700 !important;
-    font-family: 'Poppins', sans-serif !important;
     height: auto !important;
     box-shadow: 0 4px 16px rgba(30,110,180,0.25) !important;
     transition: all 0.2s ease !important;
@@ -279,27 +272,21 @@ div[data-testid="stButton"] button:hover {
     justify-content: center;
 }
 .result-label {
-    font-family: 'Poppins', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 600;
 }
 .result-badge {
-    font-family: 'Poppins', sans-serif;
     font-size: 2.4rem;
     font-weight: 700;
     margin: 0.2rem 0;
     line-height: 1.15;
 }
-.result-tier {
-    font-family: 'Poppins', sans-serif;
-}
 .result-sub {
     font-size: 0.85rem;
     opacity: 0.65;
     margin-top: 0.2rem;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* the bars */
@@ -310,7 +297,6 @@ div[data-testid="stButton"] button:hover {
     margin-bottom: 8px;
     font-size: 0.83rem;
     color: #1a3d5c;
-    font-family: 'Poppins', sans-serif;
 }
 .bar-bg {
     flex: 1;
@@ -326,7 +312,6 @@ div[data-testid="stButton"] button:hover {
 .bar-pct {
     min-width: 40px;
     text-align: right;
-    font-family: 'Poppins', sans-serif;
     font-size: 0.75rem;
     color: #2c5f85;
 }
@@ -341,7 +326,6 @@ div[data-testid="stButton"] button:hover {
     border: 1px solid #c7e3ff;
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* history */
@@ -353,14 +337,7 @@ div[style*="border-left"][style*="border-radius"]:hover {
     box-shadow: 0 4px 16px rgba(30,110,180,0.1) !important;
 }
 
-[data-testid="stExpander"] summary span {
-    font-size: 0px !important;
-    color: transparent !important;
-}
-
-[data-testid="stExpander"] summary [data-testid="stWidgetLabel"] span,
-[data-testid="stExpander"] summary [data-testid="stWidgetLabel"] p {
-    font-size: 0.98rem !important;
-    color: #1a3d5c !important;
-    display: inline-block !important;
+/* ── SAFE SCREEN-READER LEAK FIX ── */
+[data-testid="stExpander"] summary data-theme {
+    display: none !important;
 }
