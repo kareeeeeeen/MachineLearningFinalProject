@@ -258,7 +258,7 @@ with st.expander("📶 Connectivity & Features"):
         touch_screen = yesno("🤳 Touch screen", "touch_screen")
 
 # predict button
-if st.button("→  Predict Price Range", use_container_width=True):
+if st.button("➡️  Predict Price Range", use_container_width=True):
     raw = {
         "battery_power": battery_power,
         "blue":          blue,
