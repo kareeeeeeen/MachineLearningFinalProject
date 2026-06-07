@@ -356,7 +356,11 @@ div[style*="border-left"][style*="border-radius"]:hover {
 [data-testid="stExpander"] summary span {
     font-size: 0px !important;
     color: transparent !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+}
+
+[data-testid="stExpander"] summary [data-testid="stWidgetLabel"] span,
+[data-testid="stExpander"] summary [data-testid="stWidgetLabel"] p {
+    font-size: 0.98rem !important;
+    color: #1a3d5c !important;
+    display: inline-block !important;
 }
