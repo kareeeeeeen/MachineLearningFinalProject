@@ -1,19 +1,11 @@
-/* ── BASE TYPOGRAPHY (Paksa Poppins ke seluruh elemen tanpa ampun) ── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
     font-family: 'Poppins', sans-serif !important;
 }
 
-/* ── ANTI-"ARR" & ICON SHIELD (Penyelamat Icon Dropdown) ── */
-/* Kembalikan font bawaan system khusus untuk komponen icon dan SVG agar tidak pecah jadi teks hantu */
-svg, 
-svg *, 
-[data-testid="stIcon"], 
-[data-testid="stIcon"] *,
-.stIcon,
-.stIcon *,
-[data-testid="stExpander"] summary > div:last-child,
-[data-testid="stExpander"] summary > div:last-child * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
 }
 
 [data-testid="stAppViewContainer"] {
@@ -35,6 +27,353 @@ svg *,
 
 /* layout */
 .block-container {
+    max-width: 1200px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+/* header */
+.header {
+    background: linear-gradient(135deg, #1a6db5, #2e8fd4) !important;
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 24px rgba(30, 110, 180, 0.22);
+    margin-bottom: 0.5rem;
+}
+.header-tag {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .18em;
+    font-size: .7rem;
+    opacity: .8;
+    margin-bottom: 0.5rem;
+}
+.header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0.3rem 0 0.6rem;
+}
+.header p {
+    font-family: 'Poppins', sans-serif;
+    color: #c7e3ff;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* section label */
+.section-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    color: #3a7ab5;
+    margin: 1.8rem 0 0.8rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #c7e3ff;
+    padding-bottom: 0.5rem;
+}
+
+/* shortcut */
+.shortcut-card {
+    background: #fff;
+    border: 1px solid #c7e3ff;
+    border-radius: 12px;
+    padding: 0.85rem 1rem 0.7rem;
+    margin-bottom: 0.5rem;
+}
+.sc-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a3d5c;
+    margin-bottom: 0.15rem;
+}
+.sc-desc {
+    font-size: 0.73rem;
+    color: #5b82a6;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+.sc-specs-block {
+    font-size: 0.72rem;
+    font-family: 'Poppins', sans-serif;
+    background: #f5faff;
+    border: 1px solid #daeeff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-bottom: 0.5rem;
+}
+.sc-spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    border-bottom: 1px solid #eaf4ff;
+}
+.sc-spec-row:last-child { border-bottom: none; }
+.sc-spec-key {
+    color: #7ba8c9;
+    font-weight: 400;
+}
+.sc-spec-val {
+    color: #1a3d5c;
+    font-weight: 600;
+    text-align: right;
+}
+.sc-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0.1rem;
+}
+.sc-pill {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: #1a6db5;
+    background: #e8f4ff;
+    border: 1px solid #c7e3ff;
+    border-radius: 20px;
+    padding: 2px 7px;
+    white-space: nowrap;
+}
+
+/* column expander */
+[data-testid="column"] [data-testid="stExpander"],
+[data-testid="stExpander"] {
+    background: #ffffff !important;
+    border: 1px solid #c7e3ff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 4px rgba(30,110,180,0.06) !important;
+    overflow: hidden;
+    margin-bottom: 0.6rem !important;
+}
+
+[data-testid="column"] [data-testid="stExpander"] {
+    height: 100%;
+}
+
+/* header in container */
+html body [data-testid="stExpander"] summary {
+    padding: 0.85rem 1.1rem !important; 
+    background: transparent !important; 
+    border-bottom: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+html body [data-testid="stExpander"] summary span[data-testid="stWidgetLabel"] div,
+html body [data-testid="stExpander"] summary [aria-hidden="true"] + span {
+    display: none !important;
+}
+
+html body [data-testid="stExpander"] summary svg {
+    margin: 0 !important;
+    color: #1a3d5c !important; 
+    flex-shrink: 0 !important;
+}
+
+[data-testid="column"] [data-testid="stExpander"] > div:last-child,
+[data-testid="stExpander"] > div:last-child {
+    padding: 0.5rem 0.85rem 1rem !important;
+    border-top: none !important;
+}
+
+/* content inside the container */
+html body [data-testid="stExpander"] div[data-testid="stNumberInput"]:first-child label,
+html body [data-testid="stExpander"] div[data-testid="stRadio"]:first-child label {
+    margin-top: 0.2rem !important;
+}
+
+[data-testid="stExpander"] summary p {
+    font-size: 0.98rem !important;
+    font-weight: 700 !important;
+    color: #1a3d5c !important;
+    margin: 0 !important;
+}
+
+div[data-testid="stNumberInput"] label p,
+label[data-testid="stWidgetLabel"] p,
+div[data-testid="stRadio"] label[data-testid="stWidgetLabel"] p,
+div[data-testid="stRadio"] div[role="radiogroup"] label p {
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
+    color: #1a3d5c !important;
+}
+
+div[data-testid="stNumberInput"] input {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: #1a3d5c !important;
+}
+
+[data-testid="stCaptionContainer"] p {
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    color: #5b82a6 !important;
+    margin-top: -4px !important; 
+}
+
+/* inputs */
+div[data-testid="stNumberInput"] {
+    background: transparent;
+}
+div[data-testid="stNumberInput"] input {
+    background: #ffffff !important;
+    color: #1a3d5c !important;
+    border: 1.5px solid #a8d0f0 !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+}
+div[data-testid="stNumberInput"] input:focus {
+    border-color: #2e8fd4 !important;
+    box-shadow: 0 0 0 3px rgba(46,143,212,0.14) !important;
+}
+div[data-testid="stNumberInput"] button {
+    background-color: #e8f4ff !important;
+    color: #1a6db5 !important;
+    border: 1px solid #c7e3ff !important;
+    border-radius: 6px !important;
+}
+div[data-testid="stNumberInput"] button:hover {
+    background-color: #c7e3ff !important;
+}
+div[data-testid="stNumberInput"] button svg {
+    fill: #1a6db5 !important;
+    stroke: #1a6db5 !important;
+}
+
+/* predict button */
+div[data-testid="stButton"] > button {
+    background: linear-gradient(135deg, #1a6db5, #2e8fd4) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.85rem 2rem !important;
+    width: 100% !important;
+    margin-top: 0.8rem !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    font-family: 'Poppins', sans-serif !important;
+    height: auto !important;
+    box-shadow: 0 4px 16px rgba(30,110,180,0.25) !important;
+    transition: all 0.2s ease !important;
+}
+div[data-testid="stButton"] button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(30,110,180,0.35) !important;
+}
+
+/* results */
+.result-card {
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.result-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.result-badge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0.2rem 0;
+    line-height: 1.15;
+}
+.result-tier {
+    font-family: 'Poppins', sans-serif;
+}
+.result-sub {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin-top: 0.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* the bars */
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 0.83rem;
+    color: #1a3d5c;
+    font-family: 'Poppins', sans-serif;
+}
+.bar-bg {
+    flex: 1;
+    height: 9px;
+    border-radius: 99px;
+    background: #daeeff;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    border-radius: 99px;
+}
+.bar-pct {
+    min-width: 40px;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: #2c5f85;
+}
+
+/* median */
+.median-note {
+    font-size: 0.78rem;
+    color: #3a7ab5;
+    margin-top: 0.6rem;
+    font-style: italic;
+    background: #f0f8ff;
+    border: 1px solid #c7e3ff;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* history */
+div[style*="border-left"][style*="border-radius"] {
+    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+div[style*="border-left"][style*="border-radius"]:hover {
+    transform: translateX(4px) !important;
+    box-shadow: 0 4px 16px rgba(30,110,180,0.1) !important;
+}
+/* Fix expander arrow/chevron visibility */
+[data-testid="stExpander"] summary svg {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    color: #1a3d5c !important;
+}
+
+[data-testid="stExpander"] summary {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+/* Make sure the expander toggle button area is clickable */
+[data-testid="stExpander"] summary > div {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}.block-container {
     max-width: 1200px;
     padding-top: 1.5rem;
     padding-bottom: 3rem;
