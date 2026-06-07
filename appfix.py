@@ -94,7 +94,7 @@ VALID_RANGES = {
 st.markdown("""
 <div class="header">
     <div class="header-tag">📱 PhonePredict</div>
-    <h1>Phone Price Level Predictor</h1>
+    <h1>Phone Price Predictor</h1>
     <p>Enter your smartphone's technical specs below and let our ML model predict its market price range.</p>
 </div>
 """, unsafe_allow_html=True)
