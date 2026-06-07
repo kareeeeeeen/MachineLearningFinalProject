@@ -14,7 +14,6 @@ st.set_page_config(
 )
 
 def load_css():
-    st.markdown('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">', unsafe_allow_html=True)
     with open("sty.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
