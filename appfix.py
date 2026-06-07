@@ -200,7 +200,7 @@ for col, (label, info) in zip([p_col1, p_col2, p_col3, p_col4], SHORTCUTS.items(
 
 st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
 
-# category 1-4 specs
+# section 1-4 specs
 st.markdown('<div class="section-label">⚙️ Technical Specs</div>', unsafe_allow_html=True)
 col_core, col_cam, col_disp, col_phys = st.columns(4)
 
@@ -218,7 +218,7 @@ with col_core:
         st.caption("2 – 64 GB")
 
 with col_cam:
-    with st.expander("📸 Camera", expanded=True):
+    with st.expander("📷 Camera", expanded=True):
         pc = num_input("📸 Rear cam (MP)", "pc", 0, 20)
         st.caption("0 – 20 MP")
         fc = num_input("🤳 Front cam (MP)", "fc", 0, 19)
@@ -244,7 +244,7 @@ with col_phys:
         talk_time = num_input("📞 Talk time (hrs)", "talk_time", 2, 20)
         st.caption("2 – 20 hours")
 
-# ── SECTION 05: CONNECTIVITY ──────────────────────────────
+# section 5
 with st.expander("📶 Connectivity & Features"):
     c14, c15, c16 = st.columns(3)
     with c14:
@@ -257,22 +257,7 @@ with st.expander("📶 Connectivity & Features"):
         wifi         = yesno("🛜 Wi-Fi",       "wifi")
         touch_screen = yesno("🤳 Touch screen", "touch_screen")
 
-# # ── CHANGE 1: Clear All moved here (bottom of inputs) ─────
-# st.markdown("<div style='margin-top: 1rem;'></div>", unsafe_allow_html=True)
-# if st.button("🔄 Clear All Input Fields", use_container_width=True):
-#     categorical_features = {"blue", "dual_sim", "four_g", "three_g", "touch_screen", "wifi"}
-#     pending = {}
-#     for k in FEATURE_ORDER:
-#         if k in categorical_features:
-#             pending[k] = "No"
-#         elif k in VALID_RANGES:
-#             pending[k] = float(VALID_RANGES[k][0])  # min, bukan 0.0
-#         else:
-#             pending[k] = 0.0
-#     st.session_state["_pending"] = pending
-#     st.rerun()
-
-# ── PREDICT BUTTON ────────────────────────────────────────
+# predict button
 if st.button("→  Predict Price Range", use_container_width=True):
     raw = {
         "battery_power": battery_power,
@@ -352,7 +337,6 @@ if st.button("→  Predict Price Range", use_container_width=True):
     }
     insight_text = TIER_INSIGHTS[pred]
 
-    # Result card — simple label
     st.markdown(f"""
     <div class="result-card" style="background:{bg}; border: 1.5px solid {text_color}33; width:100%; box-sizing:border-box; text-align:center; margin-bottom: 1rem;">
         <div class="result-label" style="color:{text_color}; margin-bottom: 0.4rem;">PREDICTED PRICE RANGE</div>
@@ -421,7 +405,7 @@ if st.button("→  Predict Price Range", use_container_width=True):
             unsafe_allow_html=True
         )
 
-# ── CHANGE 1: Clear All moved here (bottom of inputs) ─────
+# clear all button
 st.markdown("<div style='margin-top: 1rem;'></div>", unsafe_allow_html=True)
 if st.button("🔄 Clear All Input Fields", use_container_width=True):
     categorical_features = {"blue", "dual_sim", "four_g", "three_g", "touch_screen", "wifi"}
@@ -430,13 +414,13 @@ if st.button("🔄 Clear All Input Fields", use_container_width=True):
         if k in categorical_features:
             pending[k] = "No"
         elif k in VALID_RANGES:
-            pending[k] = float(VALID_RANGES[k][0])  # min, bukan 0.0
+            pending[k] = float(VALID_RANGES[k][0])
         else:
             pending[k] = 0.0
     st.session_state["_pending"] = pending
     st.rerun()
 
-# ── HISTORY ───────────────────────────────────────────────
+# history
 if st.session_state.history:
     st.markdown('<div class="section-label">📋 Prediction History</div>', unsafe_allow_html=True)
 
